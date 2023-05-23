@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    &::before, &::after {
+        box-sizing: border-box;
+    }
+}
+
+body {
+    background-color: #eafbff;
+    background-image: linear-gradient(
+        to bottom,
+        #eafbff 0%,
+        #eafbff 50%,
+        #5290f9 50%
+    );
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    background: #fff;
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    transition: width .6s linear;
+
+    &.active {
+        width: 350px;
+
+        ul {
+            width: 100%;
+
+            li {
+                transform: rotateY(360deg);
+                opacity: 1;
+            }
+        }
+
+        .icon .line1 {
+            transform: rotate(765deg) translateY(-5.5px);
+        }
+        .icon .line2 {
+            transform: rotate(-765deg) translateY(5.5px);
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        width: 0;
+        transition: width .6s linear;
+
+        li {
+            transform: rotateY(0deg);
+            opacity: 0;
+            transition: transform .6s linear, opacity .2s linear;
+
+            a {
+                text-decoration: none;
+                color: #000;
+                margin: 0 10px;
+            }
+        }
+    }
+
+    .icon {
+        background: transparent;
+        width: 30px;
+        height: 30px;
+        border: none;
+        position: relative;
+        padding: 0;
+        cursor: pointer;
+
+        .line {
+            width: 20px;
+            height: 2px;
+            background: #5290f9;
+            position: absolute;
+            top: 10px;
+            left: 5px;
+            transform: rotate(0deg);
+            transition: transform .6s linear;
+        }
+
+        .line1 {
+            top: auto;
+            bottom: 10px;
+        }
+        
+        &:focus {
+            outline: none;
+        }
+    }
+}

@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #2a2a72;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-form {
+    width: 100%;
+    max-width: 700px;
+
+    input {
+        border: none;
+        border-radius: 5px;
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+        background-color: #4c2885;
+        font-family: inherit;
+        color: #fff;
+        box-shadow: 0 5px 10px rgba(154, 160, 184, .05),
+                    0 15px 40px rgba(0, 0, 0, 0.1);
+        
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            color: #bbb;
+        }
+    }
+}
+
+.card {
+    max-width: 800px;
+    margin-top: 1.5rem;
+    display: flex;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(154, 160, 184, .05),
+                0 15px 40px rgba(0, 0, 0, 0.1);
+    background-color: #4c2885;
+
+    .avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 10px solid #2a2a72;
+    }
+
+    .user-info {
+        margin-left: 2rem;
+        color: #eee;
+
+        h2 {
+            margin-top: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            max-width: 400px;
+            padding: 0;
+
+            li {
+                display: flex;
+                align-items: center;
+
+                strong {
+                    margin-left: .5rem;
+                    font-size: .9rem;
+                }
+            }
+        }
+    }
+
+    .repo {
+        display: inline-block;
+        background: #212a72;
+        color: #fff;
+        font-size: .7rem;
+        text-decoration: none;
+        padding: 0.25rem 0.5rem;
+        margin-right: .5rem;
+        margin-bottom: .5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .card {
+        flex-direction: column;
+        align-items: center;
+
+        .user-info {
+            max-width: 400px;
+        }
+    }
+}

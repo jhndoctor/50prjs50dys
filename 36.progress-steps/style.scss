@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+:root {
+    --line-color-empty: #383838;
+    --line-color-fill: #3498db;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Muli', sans-serif;
+    background-color: #1f1f1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+
+    .progress-container {
+        position: relative;
+        margin-bottom: 30px;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 100%;
+        width: 350px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 4px;
+            background-color: var(--line-color-empty);
+            z-index: -1;
+        }
+
+        .progress {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 0%;
+            height: 4px;
+            z-index: -1;
+            background-color: var(--line-color-fill);
+            transition: .4s ease;
+        }
+
+        .circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 3px solid var(--line-color-empty);
+            background-color: #1f1f1f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #e2e2e2;
+            transition: .4s ease;
+
+            &.active {
+                border-color: var(--line-color-fill);
+            }
+        }
+    }
+
+    .btn {
+        background-color: var(--line-color-fill);
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 8px 30px;
+        margin: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        font-family: inherit;
+
+        &:active {
+            transform: scale(.98);
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            background-color: var(--line-color-empty);
+        }
+    }
+}
